@@ -6,8 +6,8 @@ export default function Hero() {
             <section>
                 <div>
                     <div className="bg-[url('/public/Auto_Protect_Quiet_-_Source_1_1000x.jpg')] bg-cover bg-no-repeat bg-center ">
-                        <div className="px-10 py-10">
-                            <div>
+                        <div className="px-10 pt-[50%] pb-[50%]">
+                            <div className="max-w-xs">
                                 <h1 className="text-5xl text-slate-50 font-[Plantin]">Get <em>cleaner</em> air for a <em>healthier</em> home.</h1>
                             </div>
                             <div className="mt-3">
