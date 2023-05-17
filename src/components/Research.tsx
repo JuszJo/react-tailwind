@@ -22,12 +22,12 @@ function Slider() {
         sliderImage1.current?.scrollIntoView(scrollOptions)
         setActive(1);
     }
-    
+
     function changeImage2() {
         sliderImage2.current?.scrollIntoView(scrollOptions)
         setActive(2);
     }
-    
+
     function changeImage3() {
         sliderImage3.current?.scrollIntoView(scrollOptions)
         setActive(3);
@@ -35,17 +35,15 @@ function Slider() {
 
     return (
         <>
-            <div>
-                <div className='h-[100%] w-full overflow-hidden whitespace-nowrap'>
-                    <img ref={sliderImage1} className='inline w-full h-full object-cover' src={image2} alt="" />
-                    <img ref={sliderImage2} className='inline w-full h-full' src={image3} alt="" />
-                    <img ref={sliderImage3} className='inline w-full h-full' src={image4} alt="" />
-                </div>
-                <div className='flex justify-center gap-4'>
-                    <span onClick={changeImage1} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${active == 1 && "bg-stone-900"}`}></span>
-                    <span onClick={changeImage2} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${active == 2 && "bg-stone-900"}`}></span>
-                    <span onClick={changeImage3} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${active == 3 && "bg-stone-900"}`}></span>
-                </div>
+            <div className='h-[100%] w-full overflow-hidden whitespace-nowrap'>
+                <img ref={sliderImage1} className='inline w-full h-full object-cover' src={image2} alt="" />
+                <img ref={sliderImage2} className='inline w-full h-full' src={image3} alt="" />
+                <img ref={sliderImage3} className='inline w-full h-full' src={image4} alt="" />
+            </div>
+            <div className='flex justify-center gap-4 py-14'>
+                <span onClick={changeImage1} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${active == 1 && "bg-stone-900"}`}></span>
+                <span onClick={changeImage2} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${active == 2 && "bg-stone-900"}`}></span>
+                <span onClick={changeImage3} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${active == 3 && "bg-stone-900"}`}></span>
             </div>
         </>
     )
@@ -55,26 +53,46 @@ export default function Research() {
     return (
         <>
             <section>
-                <div>
-                    <div className='relative'>
-                        <div>
-                            <img src={image1} alt="" />
-                        </div>
-                        <div className='absolute top-1/2 translate-y-[-50%] text-center text-slate-50 px-6'>
+                <div className='bg-stone-100 pb-24'>
+                    <div>
+                        <div className='relative'>
                             <div>
-                                <h2 className='text-[2rem]'>Get scientifically better indoor air.</h2>
+                                <img src={image1} alt="" />
                             </div>
-                            <div className='mt-5'>
-                                <p className='text-xl'>With 25 years of R&D, rigorous scientific testing and peer-reviewed publications,
-                                    and FDA clearance for medical use, our patented PECO technology is one-of-a-kind in
-                                    its capability to not only capture, but break down pollutants like bacteria, viruses,
-                                    mold, allergens & more.
-                                </p>
+                            <div className='absolute top-1/2 translate-y-[-50%] text-center text-slate-50 px-6'>
+                                <div>
+                                    <h2 className='text-[2rem]'>Get scientifically better indoor air.</h2>
+                                </div>
+                                <div className='mt-5'>
+                                    <p className='text-xl'>With 25 years of R&D, rigorous scientific testing and peer-reviewed publications,
+                                        and FDA clearance for medical use, our patented PECO technology is one-of-a-kind in
+                                        its capability to not only capture, but break down pollutants like bacteria, viruses,
+                                        mold, allergens & more.
+                                    </p>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div>
+                        <Slider />
+                        <section>
+                            <div className='flex flex-col justify-center px-12'>
+                                <div>
+                                    <h2 className='text-[2rem]'>Keep an eye on your air.</h2>
+                                </div>
+                                <div className='pt-2'>
+                                    <p className='font-sans text-xl'>Connect your purifier to the Molekule app to control your fan speeds, turn on Auto Protect, 
+                                        see your air quality in real time, or track individual pollutant types throughout 
+                                        the previous four weeks.
+                                    </p>
+                                </div>
+                                <div className='pt-8'>
+                                    <button className='bg-stone-700 text-slate-50 px-8 py-1 rounded-[1rem] text-lg'>Shop all products</button>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
                 </div>
-                <Slider />
             </section>
         </>
     )
