@@ -3,6 +3,7 @@ import Hero from "./Hero"
 import Body from "./Body"
 import Products from "./Products"
 import Research from "./Research"
+import Impact from "./Impact"
 
 export default function Home() {
     return (
@@ -13,6 +14,7 @@ export default function Home() {
                 <Body />
                 <Products />
                 <Research />
+                <Impact />
             </main>
         </>   
     )
