@@ -4,6 +4,7 @@ import Body from "./Body"
 import Products from "./Products"
 import Research from "./Research"
 import Impact from "./Impact"
+import Reviews from "./Reviews"
 
 export default function Home() {
     return (
@@ -15,6 +16,7 @@ export default function Home() {
                 <Products />
                 <Research />
                 <Impact />
+                <Reviews />
             </main>
         </>   
     )
