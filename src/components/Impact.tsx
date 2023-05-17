@@ -29,9 +29,16 @@ function Concerns() {
                 <div>
                     {concerns.map(concernObject => {
                         return (
-                            <div key={concernObject.name}>
+                            <div key={concernObject.name} className='relative'>
                                 <img src={concernObject.image} alt="" />
-                                <h2>{concernObject.name}</h2>
+                                <div className='absolute top-[30%] left-1/2 w-max text-center translate-x-[-50%]'>
+                                    <div>
+                                        <h2 className='text-3xl text-slate-50'>{concernObject.name}</h2>
+                                    </div>
+                                    <div className='mt-4'>
+                                        <button className="px-8 py-2 text-sm text-stone-900 font-sans bg-white rounded-3xl">Learn more</button>
+                                    </div>
+                                </div>
                             </div>
                         )
                     })}
@@ -46,8 +53,8 @@ export default function Impact() {
         <>
             <section>
                 <div>
-                    <div>
-                        <h2>Learn more about how Molekule impacts common indoor air concerns.</h2>
+                    <div className='py-10 px-14'>
+                        <h2 className='text-3xl text-center'>Learn more about how Molekule impacts common indoor air concerns.</h2>
                     </div>
                     <div>
                         <Concerns />

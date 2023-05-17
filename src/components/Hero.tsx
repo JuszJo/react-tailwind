@@ -1,5 +1,3 @@
-// import backgroundImage from '../assets/Auto_Protect_Quiet_-_Source_1_1000x.jpg';
-
 export default function Hero() {
     return (
         <>
