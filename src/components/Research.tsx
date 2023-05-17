@@ -1,4 +1,4 @@
-import { BaseSyntheticEvent, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 
 import image1 from '../assets/Floating-Dust-Mobile_1000x.jpg'
 import image2 from '../assets/Group_32_3_400x.jpg'
@@ -6,7 +6,7 @@ import image3 from '../assets/Group_32_1_400x.jpg'
 import image4 from '../assets/Group_32_400x.jpg'
 
 function Slider() {
-    const [active, setActive] = useState(false);
+    const [active, setActive] = useState(1);
 
     let sliderImage1 = useRef<HTMLImageElement>(null);
     let sliderImage2 = useRef<HTMLImageElement>(null);
@@ -18,16 +18,19 @@ function Slider() {
         inline: "center",
     }
 
-    function changeImage1(e: BaseSyntheticEvent) {
+    function changeImage1() {
         sliderImage1.current?.scrollIntoView(scrollOptions)
+        setActive(1);
     }
-
+    
     function changeImage2() {
         sliderImage2.current?.scrollIntoView(scrollOptions)
+        setActive(2);
     }
-
+    
     function changeImage3() {
         sliderImage3.current?.scrollIntoView(scrollOptions)
+        setActive(3);
     }
 
     return (
@@ -39,9 +42,9 @@ function Slider() {
                     <img ref={sliderImage3} className='inline w-full h-full' src={image4} alt="" />
                 </div>
                 <div className='flex justify-center gap-4'>
-                    <span onClick={changeImage1} className='cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300'></span>
-                    <span onClick={changeImage2} className='cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300'></span>
-                    <span onClick={changeImage3} className='cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300'></span>
+                    <span onClick={changeImage1} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${active == 1 && "bg-stone-900"}`}></span>
+                    <span onClick={changeImage2} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${active == 2 && "bg-stone-900"}`}></span>
+                    <span onClick={changeImage3} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${active == 3 && "bg-stone-900"}`}></span>
                 </div>
             </div>
         </>
