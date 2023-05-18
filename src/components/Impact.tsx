@@ -29,9 +29,9 @@ function Concerns() {
                 <div>
                     {concerns.map(concernObject => {
                         return (
-                            <div key={concernObject.name} className='relative'>
-                                <img src={concernObject.image} alt="" />
-                                <div className='absolute top-[30%] left-1/2 w-max text-center translate-x-[-50%]'>
+                            <div key={concernObject.name} className='relative pb-5'>
+                                <img src={concernObject.image} className='w-full' alt="" />
+                                <div className='absolute top-[40%] left-1/2 w-max text-center translate-x-[-50%]'>
                                     <div>
                                         <h2 className='text-3xl text-slate-50'>{concernObject.name}</h2>
                                     </div>

@@ -2,7 +2,6 @@ import product1 from '../assets/AirMiniPlus_Image1_600x.png'
 import product2 from '../assets/AirPro_Image1_600x.png'
 // import ratings from '../assets/ratings.svg'
 
-
 interface ProductType {
     name: string,
     image: string,
@@ -36,7 +35,7 @@ function Product({value}: PropsType) {
 
     return (
         <>
-            <div className='text-center'>
+            <div className='text-center pt-5'>
                 <div>
                     <img src={value.image} alt="" />
                 </div>
@@ -78,7 +77,7 @@ export default function Products() {
             <section>
                 <div className="max-w-[95%] mx-auto py-12">
                     <section>
-                        <div className="flex flex-col">
+                        <div className="flex flex-col min-[500px]:flex-row">
                             {products.map(product => <Product key={product.name} value={product} />)}
                         </div>
                     </section>
