@@ -77,15 +77,15 @@ function Slider() {
         setActive(imageNumber);
     }
 
-    function autoSwitch() {
+    /* function autoSwitch() {
         timeoutID = setInterval(() => {
             if(active < 3) changeImage(active + 1);
             else changeImage(1);
         }, 10000)
-    }
+    } */
 
     useEffect(() => {
-        autoSwitch();
+        // autoSwitch();
 
         return () => clearTimeout(timeoutID);
     })
