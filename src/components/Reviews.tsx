@@ -29,7 +29,16 @@ interface PropsType {
 function ReviewCard({review}: PropsType) {
     return (
         <>
-            <h2>{review.name}</h2>
+            <div className="flex flex-col">
+                <div>
+                    <a>4 days ago</a>
+                    <h2>{review.heading}</h2>
+                    <p>{review.paragraph}</p>
+                </div>
+                <div>
+
+                </div>
+            </div>
         </>
     )
 }
@@ -39,9 +48,9 @@ function ReviewsSlider() {
         <>
             <section>
                 <div>
-                    <h1>Slider</h1>
                     <div className=''>
-                        {reviews.map(review => <ReviewCard review={review} />)}
+                        {<ReviewCard review={reviews[0]} />}
+                        {/* {reviews.map(review => <ReviewCard review={review} />)} */}
                     </div>
                 </div>
             </section>
@@ -53,7 +62,7 @@ export default function Reviews() {
     return (
         <>
             <section>
-                <div>
+                <div className="font-sans">
                     <div className='py-10 px-14 bg-stone-100 mt-[-1.3rem]'>
                         <h2 className='text-3xl text-center'>Science-backed air purifiers that customers trust.</h2>
                     </div>
