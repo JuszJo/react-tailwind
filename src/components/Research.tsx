@@ -57,8 +57,6 @@ function Slider() {
     let sliderImage2 = useRef<HTMLImageElement>(null);
     let sliderImage3 = useRef<HTMLImageElement>(null);
 
-    let timeoutID = 0;
-
     const imageArray = [
         sliderImage1,
         sliderImage2,
