@@ -77,17 +77,19 @@ function Slider() {
     return (
         <>
             <section>
-                <div className='h-[100%] w-full overflow-x-hidden overflow-y-auto whitespace-nowrap'>
-                    <img ref={sliderImage1} className='inline w-full h-full object-cover' src={image2} alt="" />
-                    <img ref={sliderImage2} className='inline w-full h-full' src={image3} alt="" />
-                    <img ref={sliderImage3} className='inline w-full h-full' src={image4} alt="" />
+                <div className='flex flex-col'>
+                    <div className='h-[100%] w-full overflow-x-hidden overflow-y-auto whitespace-nowrap'>
+                        <img ref={sliderImage1} className='inline w-full h-full object-cover' src={image2} alt="" />
+                        <img ref={sliderImage2} className='inline w-full h-full' src={image3} alt="" />
+                        <img ref={sliderImage3} className='inline w-full h-full' src={image4} alt="" />
+                    </div>
+                    <div className='flex justify-center gap-4 py-14'>
+                        <span onClick={() => changeImage(1)} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${active == 1 && "bg-stone-900"}`}></span>
+                        <span onClick={() => changeImage(2)} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${active == 2 && "bg-stone-900"}`}></span>
+                        <span onClick={() => changeImage(3)} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${active == 3 && "bg-stone-900"}`}></span>
+                    </div>
+                    <SliderText key={text[active - 1].heading} value={text[active - 1]} />
                 </div>
-                <div className='flex justify-center gap-4 py-14'>
-                    <span onClick={() => changeImage(1)} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${active == 1 && "bg-stone-900"}`}></span>
-                    <span onClick={() => changeImage(2)} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${active == 2 && "bg-stone-900"}`}></span>
-                    <span onClick={() => changeImage(3)} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${active == 3 && "bg-stone-900"}`}></span>
-                </div>
-                <SliderText key={text[active - 1].heading} value={text[active - 1]} />            
             </section>
         </>
     )
