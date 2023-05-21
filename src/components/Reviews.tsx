@@ -1,3 +1,20 @@
+import { SliderText } from "./Research"
+
+const reviews: Array<SliderText> = [
+    {
+        heading: "",
+        paragraph: ""
+    },
+    {
+        heading: "",
+        paragraph: ""
+    },
+    {
+        heading: "",
+        paragraph: ""
+    },
+]
+
 function ReviewsSlider() {
     return (
         <>

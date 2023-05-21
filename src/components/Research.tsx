@@ -5,7 +5,7 @@ import image2 from '../assets/Group_32_3_400x.jpg'
 import image3 from '../assets/Group_32_1_400x.jpg'
 import image4 from '../assets/Group_32_400x.jpg'
 
-interface SliderText {
+export interface SliderText {
     heading: string,
     paragraph: string,
 }
