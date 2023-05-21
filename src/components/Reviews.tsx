@@ -22,12 +22,27 @@ const reviews: Array<Buyer> = [
     },
 ]
 
+interface PropsType {
+    review: Buyer
+}
+
+function ReviewCard({review}: PropsType) {
+    return (
+        <>
+            <h2>{review.name}</h2>
+        </>
+    )
+}
+
 function ReviewsSlider() {
     return (
         <>
             <section>
                 <div>
                     <h1>Slider</h1>
+                    <div className=''>
+                        {reviews.map(review => <ReviewCard review={review} />)}
+                    </div>
                 </div>
             </section>
         </>
