@@ -6,19 +6,19 @@ interface Buyer extends SliderText {
 
 const reviews: Array<Buyer> = [
     {
-        heading: "",
-        paragraph: "",
-        name: ""
+        heading: "Works great.",
+        paragraph: "The air in my house seems fresh and clean. Thank you. Great warranty service.",
+        name: "Bette A."
     },
     {
-        heading: "",
-        paragraph: "",
-        name: ""
+        heading: "EXCELLENT SERVICE",
+        paragraph: "WONDERFUL",
+        name: "Paul P."
     },
     {
-        heading: "",
-        paragraph: "",
-        name: ""
+        heading: "Air Mini Replacement!",
+        paragraph: "I love it… easy to replace and get going again!!",
+        name: "Cynthia M."
     },
 ]
 
