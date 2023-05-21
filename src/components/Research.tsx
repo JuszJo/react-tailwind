@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 
 import image1 from '../assets/Floating-Dust-Mobile_1000x.jpg'
 import image2 from '../assets/Group_32_3_400x.jpg'
@@ -73,27 +73,13 @@ function Slider() {
 
     function changeImage(imageNumber: number) {
         imageArray[imageNumber - 1].current?.scrollIntoView(scrollOptions);
-
         setActive(imageNumber);
     }
-
-    /* function autoSwitch() {
-        timeoutID = setInterval(() => {
-            if(active < 3) changeImage(active + 1);
-            else changeImage(1);
-        }, 10000)
-    } */
-
-    useEffect(() => {
-        // autoSwitch();
-
-        return () => clearTimeout(timeoutID);
-    })
 
     return (
         <>
             <section>
-                <div className='h-[100%] w-full overflow-hidden whitespace-nowrap'>
+                <div className='h-[100%] w-full overflow-x-hidden overflow-y-auto whitespace-nowrap'>
                     <img ref={sliderImage1} className='inline w-full h-full object-cover' src={image2} alt="" />
                     <img ref={sliderImage2} className='inline w-full h-full' src={image3} alt="" />
                     <img ref={sliderImage3} className='inline w-full h-full' src={image4} alt="" />
@@ -117,7 +103,7 @@ export default function Research() {
                     <div>
                         <div className='relative'>
                             <div>
-                                <img src={image1} alt="" />
+                                <img className='w-full' src={image1} alt="" />
                             </div>
                             <div className='absolute top-1/2 translate-y-[-50%] text-center text-slate-50 px-6 min-[500px]:px-24'>
                                 <div>
@@ -135,7 +121,6 @@ export default function Research() {
                     </div>
                     <div>
                         <Slider />
-
                     </div>
                 </div>
             </section>
