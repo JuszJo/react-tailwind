@@ -1,17 +1,24 @@
 import { SliderText } from "./Research"
 
-const reviews: Array<SliderText> = [
+interface Buyer extends SliderText {
+    name: string
+}
+
+const reviews: Array<Buyer> = [
     {
         heading: "",
-        paragraph: ""
+        paragraph: "",
+        name: ""
     },
     {
         heading: "",
-        paragraph: ""
+        paragraph: "",
+        name: ""
     },
     {
         heading: "",
-        paragraph: ""
+        paragraph: "",
+        name: ""
     },
 ]
 
