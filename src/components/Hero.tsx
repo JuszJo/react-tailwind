@@ -1,10 +1,14 @@
+import heroImage from '../assets/1972_MemorialDayPromo_HomePageHero_Desktop_1200x.jpg';
+
 export default function Hero() {
     return (
         <>
             <section>
                 <div>
-                    <div className="bg-[url('/public/Auto_Protect_Quiet_-_Source_1_1000x.jpg')] bg-cover bg-no-repeat bg-center ">
-                        <div className="px-10 pt-[50%] pb-[50%]">
+                    <div className="relative">
+                        <img className='w-full h-full object-cover' src={heroImage} />
+                    {/* <div className="bg-[url('/public/Auto_Protect_Quiet_-_Source_1_1000x.jpg')] bg-cover bg-no-repeat bg-center "> */}
+                        <div className="absolute top-0">
                             <div className="max-w-xs">
                                 <h1 className="text-5xl text-slate-50 font-[Plantin]">Get <em>cleaner</em> air for a <em>healthier</em> home.</h1>
                             </div>
