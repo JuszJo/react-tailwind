@@ -1,12 +1,39 @@
-import heroImage from '../assets/1972_MemorialDayPromo_HomePageHero_Desktop_1200x.jpg';
+import { useEffect, useState } from 'react';
+import heroImageDesktop from '../assets/1972_MemorialDayPromo_HomePageHero_Desktop_1200x.jpg';
+import heroImageMobile from '../assets/1972_MemorialDayPromo_HomePageHero_Mobile_1000x.jpg';
 
 export default function Hero() {
+    const [isMobile, setIsMobile] = useState(true);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+    function resizeHandler() {
+        setWindowWidth(window.innerWidth);
+    }
+
+    function checkWidth() {
+        if(windowWidth <= 768) {
+            setIsMobile(true)
+        }
+        else {
+            setIsMobile(false)
+        }
+    }
+    
+    useEffect(() => {
+        checkWidth();
+
+        addEventListener('resize', resizeHandler);
+
+        return () => removeEventListener('resize', resizeHandler);
+        
+    }, [windowWidth])
+
     return (
         <>
             <section>
                 <div>
                     <div className="relative">
-                        <img className='w-full h-full object-cover' src={heroImage} />
+                        <img className='w-full h-full object-cover' src={isMobile ? heroImageMobile : heroImageDesktop} />
                     {/* <div className="bg-[url('/public/Auto_Protect_Quiet_-_Source_1_1000x.jpg')] bg-cover bg-no-repeat bg-center "> */}
                         <div className="absolute top-0">
                             <div className="max-w-xs">
