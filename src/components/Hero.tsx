@@ -1,32 +1,9 @@
-import { useEffect, useState } from 'react';
 import heroImageDesktop from '../assets/1972_MemorialDayPromo_HomePageHero_Desktop_1200x.jpg';
 import heroImageMobile from '../assets/1972_MemorialDayPromo_HomePageHero_Mobile_1000x.jpg';
+import useView from '../hooks/useView';
 
 export default function Hero() {
-    const [isMobile, setIsMobile] = useState(true);
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-
-    function resizeHandler() {
-        setWindowWidth(window.innerWidth);
-    }
-
-    function checkWidth() {
-        if(windowWidth <= 768) {
-            setIsMobile(true)
-        }
-        else {
-            setIsMobile(false)
-        }
-    }
-    
-    useEffect(() => {
-        checkWidth();
-
-        addEventListener('resize', resizeHandler);
-
-        return () => removeEventListener('resize', resizeHandler);
-
-    }, [windowWidth])
+    const isMobile = useView();
 
     return (
         <>

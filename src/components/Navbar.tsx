@@ -2,8 +2,14 @@ import menu_open from '../assets/menu._open.svg';
 import logo from '../assets/Molekule_Logo_DarkGray1200_200x.png';
 import search from '../assets/search.svg';
 import bag from '../assets/bag.svg'
+import useView from '../hooks/useView';
 
 export default function Navbar() {
+    const me = useView();
+
+    console.log(me);
+    
+
     return (
         <>
             <header>
