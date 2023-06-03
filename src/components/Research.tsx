@@ -5,6 +5,11 @@ import image2 from '../assets/Group_32_3_400x.jpg'
 import image3 from '../assets/Group_32_1_400x.jpg'
 import image4 from '../assets/Group_32_400x.jpg'
 
+import image2Full from '../assets/Group_32_3_1200x.jpg'
+import image3Full from '../assets/Group_32_1_1200x.jpg'
+import image4Full from '../assets/Group_32_1200x.jpg'
+import useView from '../hooks/useView'
+
 export interface SliderText {
     heading: string,
     paragraph: string,
@@ -34,7 +39,7 @@ function SliderText({value}: PropsType) {
     return (
         <>
             <section>
-                <div className={`flex flex-col justify-center px-12 animate-[fade-in_1s_ease-in-out_normal]`}>
+                <div className={`flex flex-col justify-center px-12 min-[768px]:px-8 py-12 animate-[fade-in_1s_ease-in-out_normal]`}>
                     <div>
                         <h2 className='text-[2rem]'>{value.heading}</h2>
                     </div>
@@ -52,6 +57,7 @@ function SliderText({value}: PropsType) {
 
 function Slider() {
     const [active, setActive] = useState(1);
+    const isMobile = useView();
 
     let sliderImage1 = useRef<HTMLImageElement>(null);
     let sliderImage2 = useRef<HTMLImageElement>(null);
@@ -77,17 +83,18 @@ function Slider() {
     return (
         <>
             <section>
-                <div className='flex flex-col'>
-                    <div className='h-[100%] w-full overflow-x-hidden overflow-y-auto whitespace-nowrap'>
-                        <img ref={sliderImage1} className='inline w-full h-full object-cover' src={image2} alt="" />
-                        <img ref={sliderImage2} className='inline w-full h-full' src={image3} alt="" />
-                        <img ref={sliderImage3} className='inline w-full h-full' src={image4} alt="" />
+                <div className='flex flex-col min-[768px]:flex-row-reverse'>
+                    <div className='h-[100%] w-full overflow-x-hidden overflow-y-auto whitespace-nowrap min-[768px]:basis-[200%]'>
+                        <img ref={sliderImage1} className='inline w-full h-full object-cover' src={isMobile ? image2 : image2Full} alt="" />
+                        <img ref={sliderImage2} className='inline w-full h-full' src={isMobile ? image3 : image3Full} alt="" />
+                        <img ref={sliderImage3} className='inline w-full h-full' src={isMobile ? image4 : image4Full} alt="" />
                     </div>
-                    <div className='flex justify-center gap-4 py-14'>
+                    <div className='flex justify-center gap-4 py-14 min-[768px]:hidden'>
                         <span onClick={() => changeImage(1)} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${active == 1 && "bg-stone-900"}`}></span>
                         <span onClick={() => changeImage(2)} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${active == 2 && "bg-stone-900"}`}></span>
                         <span onClick={() => changeImage(3)} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${active == 3 && "bg-stone-900"}`}></span>
                     </div>
+                    
                     <SliderText key={text[active - 1].heading} value={text[active - 1]} />
                 </div>
             </section>
@@ -96,10 +103,12 @@ function Slider() {
 }
 
 export default function Research() {
+    const isMobile = useView();
+
     return (
         <>
             <section>
-                <div className='bg-stone-100 pb-24'>
+                <div className={`bg-stone-100 ${isMobile ? 'pb-24' : 'pb-0'}`}>
                     <div>
                         <div className='relative'>
                             <div>
