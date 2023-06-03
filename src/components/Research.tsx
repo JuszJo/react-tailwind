@@ -39,7 +39,7 @@ function SliderText({value}: PropsType) {
     return (
         <>
             <section>
-                <div className={`flex flex-col justify-center px-12 min-[768px]:px-8 py-12 animate-[fade-in_1s_ease-in-out_normal]`}>
+                <div className={`flex flex-col justify-center px-12 animate-[fade-in_1s_ease-in-out_normal] min-[768px]:px-8 py-12 w-[500px]`}>
                     <div>
                         <h2 className='text-[2rem]'>{value.heading}</h2>
                     </div>
@@ -85,17 +85,18 @@ function Slider() {
             <section>
                 <div className='flex flex-col min-[768px]:flex-row-reverse'>
                     <div className='h-[100%] w-full overflow-x-hidden overflow-y-auto whitespace-nowrap min-[768px]:basis-[200%]'>
-                        <img ref={sliderImage1} className='inline w-full h-full object-cover' src={isMobile ? image2 : image2Full} alt="" />
-                        <img ref={sliderImage2} className='inline w-full h-full' src={isMobile ? image3 : image3Full} alt="" />
-                        <img ref={sliderImage3} className='inline w-full h-full' src={isMobile ? image4 : image4Full} alt="" />
+                        <img ref={sliderImage1} className='inline w-full h-full object-contain' src={isMobile ? image2 : image2Full} alt="" />
+                        <img ref={sliderImage2} className='inline w-full h-full object-contain' src={isMobile ? image3 : image3Full} alt="" />
+                        <img ref={sliderImage3} className='inline w-full h-full object-contain' src={isMobile ? image4 : image4Full} alt="" />
                     </div>
-                    <div className='flex justify-center gap-4 py-14 min-[768px]:hidden'>
-                        <span onClick={() => changeImage(1)} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${active == 1 && "bg-stone-900"}`}></span>
-                        <span onClick={() => changeImage(2)} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${active == 2 && "bg-stone-900"}`}></span>
-                        <span onClick={() => changeImage(3)} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${active == 3 && "bg-stone-900"}`}></span>
+                    <div>
+                        <SliderText key={text[active - 1].heading} value={text[active - 1]} />
+                        <div className='flex justify-center gap-4 py-14'>
+                            <span onClick={() => changeImage(1)} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${active == 1 && "bg-stone-900"}`}></span>
+                            <span onClick={() => changeImage(2)} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${active == 2 && "bg-stone-900"}`}></span>
+                            <span onClick={() => changeImage(3)} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${active == 3 && "bg-stone-900"}`}></span>
+                        </div>
                     </div>
-                    
-                    <SliderText key={text[active - 1].heading} value={text[active - 1]} />
                 </div>
             </section>
         </>
