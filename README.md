@@ -1,2 +1,2 @@
 # React Website
-React + Typescript + Tailwind
+A clone of the Molekule website made using React, Typescript and Tailwind
