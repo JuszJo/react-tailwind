@@ -103,7 +103,7 @@ export default function Research() {
                     <div>
                         <div className='relative'>
                             <div>
-                                <img className='w-full' src={image1} alt="" />
+                                <img className='w-full min-[768px]:h-[400px] object-cover object-center' src={image1} alt="" />
                             </div>
                             <div className='absolute top-1/2 translate-y-[-50%] text-center text-slate-50 px-6 min-[500px]:px-24'>
                                 <div>
