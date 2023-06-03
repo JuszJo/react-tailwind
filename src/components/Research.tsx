@@ -39,7 +39,7 @@ function SliderText({value}: PropsType) {
     return (
         <>
             <section>
-                <div className={`flex flex-col justify-center px-12 animate-[fade-in_1s_ease-in-out_normal] min-[768px]:px-8 py-12 w-[500px]`}>
+                <div className={`flex flex-col justify-center px-12 py-6 animate-[fade-in_1s_ease-in-out_normal] min-[768px]:px-8 min-[768px]:py-12 min-[768px]:w-[500px]`}>
                     <div>
                         <h2 className='text-[2rem]'>{value.heading}</h2>
                     </div>

@@ -1,5 +1,6 @@
 import product1 from '../assets/AirMiniPlus_Image1_600x.png'
 import product2 from '../assets/AirPro_Image1_600x.png'
+import useView from '../hooks/useView';
 // import ratings from '../assets/ratings.svg'
 
 interface ProductType {
@@ -72,12 +73,14 @@ function Product({value}: PropsType) {
 }
 
 export default function Products() {
+    const isMobile = useView();
+
     return (
         <>
             <section>
-                <div className="max-w-[95%] mx-auto py-12">
+                <div className={`max-w-[95%] mx-auto py-12 ${!isMobile ? 'max-w-[1300px]' : ''}`}>
                     <section>
-                        <div className="flex flex-col min-[500px]:flex-row">
+                        <div className={`flex flex-col min-[500px]:flex-row ${!isMobile ? 'justify-between' : ''}`}>
                             {products.map(product => <Product key={product.name} value={product} />)}
                         </div>
                     </section>

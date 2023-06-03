@@ -2,6 +2,7 @@ import image1 from '../assets/Group_36_800x.jpg'
 import image2 from '../assets/Group_36_1_800x.jpg'
 import image3 from '../assets/Group_36_2_800x.jpg'
 import image4 from '../assets/Group_36_4_800x.jpg'
+import useView from '../hooks/useView'
 
 const concerns = [
     {
@@ -23,15 +24,16 @@ const concerns = [
 ]
 
 function Concerns() {
+    const isMobile = useView();
     return (
         <>
             <section>
-                <div>
+                <div className={!isMobile ? 'flex justify-between gap-4' : ''}>
                     {concerns.map(concernObject => {
                         return (
-                            <div key={concernObject.name} className='relative pb-5'>
+                            <div key={concernObject.name} className='relative pb-5 min-[768px]:grow'>
                                 <img src={concernObject.image} className='w-full' alt="" />
-                                <div className='absolute top-[40%] left-1/2 w-max text-center translate-x-[-50%]'>
+                                <div className='absolute top-[35%] left-1/2 w-max text-center translate-x-[-50%]'>
                                     <div>
                                         <h2 className='text-3xl text-slate-50'>{concernObject.name}</h2>
                                     </div>
