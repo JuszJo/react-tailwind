@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { SliderText } from "./Research"
 
 interface Buyer extends SliderText {
@@ -27,14 +28,14 @@ interface PropsType {
 }
 
 function ReviewCard({review}: PropsType) {
+
     return (
         <>
             <div className="flex flex-col">
                 <div className="py-4 px-10">
                     <div className="text-center">
-                        {/* <a>4 days ago</a> */}
-                        <h2 className="text-lg font-semibold mb-1">{review.heading}</h2>
-                        <p className="text-xl mb-1"><i>"{review.paragraph}"</i></p>
+                        <h2 className="text-2xl font-semibold mb-4">{review.heading}</h2>
+                        <p className="text-xl mb-2"><i>"{review.paragraph}"</i></p>
                         <p className="font-medium">{review.name}</p>
                     </div>
                     <div>
@@ -47,13 +48,24 @@ function ReviewCard({review}: PropsType) {
 }
 
 function ReviewsSlider() {
+    const [currentReview, setCurrentReview] = useState(0)
+
+    function changeReview(number: number) {
+        setCurrentReview(number)
+    }
+
     return (
         <>
             <section>
-                <div>
+                <div className="py-4 px-10">
                     <div className=''>
-                        {<ReviewCard review={reviews[0]} />}
+                        {<ReviewCard review={reviews[currentReview]} />}
                         {/* {reviews.map(review => <ReviewCard review={review} />)} */}
+                    </div>
+                    <div className="flex gap-2 justify-center mt-4">
+                        <span onClick={() => changeReview(0)} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${currentReview == 0 && "bg-stone-900"}`}></span>
+                        <span onClick={() => changeReview(1)} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${currentReview == 1 && "bg-stone-900"}`}></span>
+                        <span onClick={() => changeReview(2)} className={`cursor-pointer w-3 h-3 inline-block rounded-full bg-stone-300 ${currentReview == 2 && "bg-stone-900"}`}></span>
                     </div>
                 </div>
             </section>

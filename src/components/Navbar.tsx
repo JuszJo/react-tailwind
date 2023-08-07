@@ -35,14 +35,14 @@ function Desktop() {
             <header className='sticky top-0 bg-white z-10'>
                 <nav className='mx-16 text-[1.05rem]'>
                     <div className="flex justify-between items-center">
-                        <div className='basis-full'>
+                        <div className=''>
                             <ul className='flex items-center gap-12'>
                                 <li>Shop</li>
                                 <li>Technology</li>
                                 <li>Resources</li>
                             </ul>
                         </div>
-                        <div className='basis-full'>
+                        <div className='basis-full mx-8'>
                             <img className='w-[9.5rem] m-auto' src={logo} alt="" />
                         </div>
                         <div className='basis-full'>
