@@ -42,10 +42,10 @@ function Desktop() {
                                 <li>Resources</li>
                             </ul>
                         </div>
-                        <div className='basis-full mx-8'>
+                        <div className='mx-8'>
                             <img className='w-[9.5rem] m-auto' src={logo} alt="" />
                         </div>
-                        <div className='basis-full'>
+                        <div className=''>
                             <div className=''>
                                 <ul className='flex items-center justify-end gap-12'>
                                     <li>Blog</li>

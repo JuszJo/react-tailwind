@@ -11,7 +11,7 @@ export default function Hero() {
                 <div>
                     <div className="relative">
                         <img className='w-full h-full' src={isMobile ? heroImageMobile : heroImageDesktop} />
-                        <div className="absolute top-[2rem] ml-6">
+                        <div className="absolute top-[2rem] md:top-20 ml-6">
                             <div className="max-w-xs">
                                 <h1 className="text-5xl text-slate-50 font-[Plantin]">Get <em>cleaner</em> air for a <em>healthier</em> home.</h1>
                             </div>

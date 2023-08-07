@@ -5,6 +5,7 @@ import Products from "./Products"
 import Research from "./Research"
 import Impact from "./Impact"
 import Reviews from "./Reviews"
+import Footer from "./Footer"
 
 export default function Home() {
     return (
@@ -17,6 +18,7 @@ export default function Home() {
                 <Research />
                 <Impact />
                 <Reviews />
+                <Footer />
             </main>
         </>   
     )
