@@ -30,13 +30,16 @@ function ReviewCard({review}: PropsType) {
     return (
         <>
             <div className="flex flex-col">
-                <div>
-                    <a>4 days ago</a>
-                    <h2>{review.heading}</h2>
-                    <p>{review.paragraph}</p>
-                </div>
-                <div>
+                <div className="py-4 px-10">
+                    <div className="text-center">
+                        {/* <a>4 days ago</a> */}
+                        <h2 className="text-lg font-semibold mb-1">{review.heading}</h2>
+                        <p className="text-xl mb-1"><i>"{review.paragraph}"</i></p>
+                        <p className="font-medium">{review.name}</p>
+                    </div>
+                    <div>
 
+                    </div>
                 </div>
             </div>
         </>
